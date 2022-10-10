@@ -48,4 +48,14 @@ You only need to realize the fizzBuzz functions inside by means of TDD.
 ## Notes on existing codes
 
 Existing codes will help explain how to use tests. You will find two tests under HelloWorldTest. The first shows how to conduct integration tests and use Assert. 
-The second shows how to do mock. 
+The second shows how to do mock.
+
+## Tasking
+1. should return 4 when counts off given number not multiples with 3, 5, 7
+2. should return Fizz when counts off given 3
+3. should return Buzz when counts off given 5
+4. should return Whizz when counts off given 7
+5. should return FizzBuzz when counts off given 15
+6. should return FizzWhizz when counts off given 21
+7. should return BuzzWhizz when counts off given 35
+8. should return FizzBuzzWhizz when counts off given 105
