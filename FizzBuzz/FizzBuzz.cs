@@ -4,22 +4,28 @@ namespace FizzBuzz
     {
         public static string CountAndSay(int number)
         {
-            if (number % 3 == 0)
+            var sayWord = string.Empty;
+            if (IsMultiplesOf(number, 3))
             {
-                return "Fizz";
+                sayWord += "Fizz";
             }
 
-            if (number % 5 == 0)
+            if (IsMultiplesOf(number, 5))
             {
-                return "Buzz";
+                sayWord += "Buzz";
             }
 
-            if (number % 7 == 0)
+            if (IsMultiplesOf(number, 7))
             {
-                return "Whizz";
+                sayWord += "Whizz";
             }
 
-            return number.ToString();
+            return sayWord.Length == 0 ? number.ToString() : sayWord;
+        }
+
+        private static bool IsMultiplesOf(int number, int divisor)
+        {
+            return number % divisor == 0;
         }
     }
 }

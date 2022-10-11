@@ -33,5 +33,14 @@ namespace FizzBuzzTest
             Assert.Equal("1", FizzBuzz.FizzBuzz.CountAndSay(1));
             Assert.Equal("2", FizzBuzz.FizzBuzz.CountAndSay(2));
         }
+
+        [Fact]
+        public void Should_say_Fizz_Buzz_Whizz_combination_when_count_given_number_is_the_multiples_of_3_and_5_and_7()
+        {
+            Assert.Equal("FizzBuzz", FizzBuzz.FizzBuzz.CountAndSay(15));
+            Assert.Equal("BuzzWhizz", FizzBuzz.FizzBuzz.CountAndSay(35));
+            Assert.Equal("FizzWhizz", FizzBuzz.FizzBuzz.CountAndSay(21));
+            Assert.Equal("FizzBuzzWhizz", FizzBuzz.FizzBuzz.CountAndSay(105));
+        }
     }
 }
