@@ -4,12 +4,22 @@ namespace FizzBuzz
     {
         public static string CountAndSay(int number)
         {
+            if (number % 3 == 0)
+            {
+                return "Fizz";
+            }
+
+            if (number % 5 == 0)
+            {
+                return "Buzz";
+            }
+
             if (number % 7 == 0)
             {
                 return "Whizz";
             }
 
-            return number % 5 == 0 ? "Buzz" : "Fizz";
+            return number.ToString();
         }
     }
 }
