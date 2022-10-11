@@ -12,5 +12,12 @@ namespace FizzBuzzTest
             Assert.Equal("Fizz", FizzBuzz.FizzBuzz.CountAndSay(3));
             Assert.Equal("Fizz", FizzBuzz.FizzBuzz.CountAndSay(6));
         }
+
+        [Fact]
+        public void Should_say_Buzz_when_count_given_number_is_the_multiples_of_5()
+        {
+            Assert.Equal("Buzz", FizzBuzz.FizzBuzz.CountAndSay(5));
+            Assert.Equal("Buzz", FizzBuzz.FizzBuzz.CountAndSay(10));
+        }
     }
 }

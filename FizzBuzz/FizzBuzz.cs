@@ -4,7 +4,7 @@ namespace FizzBuzz
     {
         public static string CountAndSay(int number)
         {
-            return "Fizz";
+            return number % 5 == 0 ? "Buzz" : "Fizz";
         }
     }
 }
