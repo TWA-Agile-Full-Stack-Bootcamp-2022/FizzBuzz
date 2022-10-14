@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using FizzBuzz;
 using Moq;
 using Xunit;
@@ -6,41 +7,47 @@ namespace FizzBuzzTest
 {
     public class FizzBuzzTest
     {
-        [Fact]
-        public void Should_say_Fizz_when_count_given_number_is_the_multiples_of_3()
+        [Theory]
+        [InlineData(3)]
+        [InlineData(6)]
+        public void Should_say_Fizz_when_count_given_number_is_the_multiples_of_3(int number)
         {
-            Assert.Equal("Fizz", FizzBuzz.FizzBuzz.CountAndSay(3));
-            Assert.Equal("Fizz", FizzBuzz.FizzBuzz.CountAndSay(6));
+            Assert.Equal("Fizz", FizzBuzz.FizzBuzz.CountAndSay(number));
         }
 
-        [Fact]
-        public void Should_say_Buzz_when_count_given_number_is_the_multiples_of_5()
+        [Theory]
+        [InlineData(5)]
+        [InlineData(10)]
+        public void Should_say_Buzz_when_count_given_number_is_the_multiples_of_5(int number)
         {
-            Assert.Equal("Buzz", FizzBuzz.FizzBuzz.CountAndSay(5));
-            Assert.Equal("Buzz", FizzBuzz.FizzBuzz.CountAndSay(10));
+            Assert.Equal("Buzz", FizzBuzz.FizzBuzz.CountAndSay(number));
         }
 
-        [Fact]
-        public void Should_say_Whizz_when_count_given_number_is_the_multiples_of_7()
+        [Theory]
+        [InlineData(7)]
+        [InlineData(14)]
+        public void Should_say_Whizz_when_count_given_number_is_the_multiples_of_7(int number)
         {
-            Assert.Equal("Whizz", FizzBuzz.FizzBuzz.CountAndSay(7));
-            Assert.Equal("Whizz", FizzBuzz.FizzBuzz.CountAndSay(14));
+            Assert.Equal("Whizz", FizzBuzz.FizzBuzz.CountAndSay(number));
         }
 
-        [Fact]
-        public void Should_say_the_number_when_count_given_number_is_not_the_multiples_of_3_5_7()
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        public void Should_say_the_number_when_count_given_number_is_not_the_multiples_of_3_5_7(int number)
         {
-            Assert.Equal("1", FizzBuzz.FizzBuzz.CountAndSay(1));
-            Assert.Equal("2", FizzBuzz.FizzBuzz.CountAndSay(2));
+            Assert.Equal(number.ToString(), FizzBuzz.FizzBuzz.CountAndSay(number));
         }
 
-        [Fact]
-        public void Should_say_Fizz_Buzz_Whizz_combination_when_count_given_number_is_the_multiples_of_3_and_5_and_7()
+        [Theory]
+        [InlineData(15, "FizzBuzz")]
+        [InlineData(35, "BuzzWhizz")]
+        [InlineData(21, "FizzWhizz")]
+        [InlineData(105, "FizzBuzzWhizz")]
+        public void Should_say_Fizz_Buzz_Whizz_combination_when_count_given_number_is_the_multiples_of_3_and_5_and_7(
+            int number, string expect)
         {
-            Assert.Equal("FizzBuzz", FizzBuzz.FizzBuzz.CountAndSay(15));
-            Assert.Equal("BuzzWhizz", FizzBuzz.FizzBuzz.CountAndSay(35));
-            Assert.Equal("FizzWhizz", FizzBuzz.FizzBuzz.CountAndSay(21));
-            Assert.Equal("FizzBuzzWhizz", FizzBuzz.FizzBuzz.CountAndSay(105));
+            Assert.Equal(expect, FizzBuzz.FizzBuzz.CountAndSay(number));
         }
     }
 }
