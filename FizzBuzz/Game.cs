@@ -11,6 +11,10 @@ namespace FizzBuzz
             {
                 return "Fizz";
             }
+            else if (v % 5 == 0)
+            {
+                return "Buzz";
+            }
 
             return v.ToString();
         }
