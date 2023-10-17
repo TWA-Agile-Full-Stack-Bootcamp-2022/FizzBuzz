@@ -7,11 +7,17 @@ namespace FizzBuzz
     {
         public string Count(int v)
         {
+            if (v % 15 == 0)
+            {
+                return "FizzBuzz";
+            }
+
             if (v % 3 == 0)
             {
                 return "Fizz";
             }
-            else if (v % 5 == 0)
+
+            if (v % 5 == 0)
             {
                 return "Buzz";
             }
