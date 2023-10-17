@@ -7,6 +7,11 @@ namespace FizzBuzz
     {
         public string Count(int v)
         {
+            if (v % 3 == 0)
+            {
+                return "Fizz";
+            }
+
             return v.ToString();
         }
     }
