@@ -14,5 +14,13 @@ namespace FizzBuzzTest
             //then
             Assert.Equal("1", game.Count(1));
         }
+
+        [Fact]
+        public void Should_Be_Fizz_When_3()
+        {
+            Game game = new Game();
+
+            Assert.Equal("Fizz", game.Count(3));
+        }
     }
 }
